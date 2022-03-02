@@ -1,24 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="BYZ-38-t0r" customClass="GameViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-qC-cak">
+                                <rect key="frame" x="105.66666666666669" y="354.66666666666669" width="217" height="217.00000000000006"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ol5-Q5-vG8">
+                                        <rect key="frame" x="0.0" y="0.0" width="217" height="217"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6BF-qy-qvy">
+                                                <rect key="frame" x="0.0" y="0.0" width="217" height="62.333333333333336"/>
+                                                <subviews>
+                                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2x-4b-Hzi" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="1sY-MG-DYt"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-0g-sRE" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="77.333333333333329" y="0.0" width="62.333333333333329" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Xig-au-6dC"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-fO-YIh" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="154.66666666666663" y="0.0" width="62.333333333333343" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="hmy-mH-MTZ"/>
+                                                        </connections>
+                                                    </view>
+                                                </subviews>
+                                                <variation key="heightClass=regular-widthClass=regular" spacing="22"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kE3-53-10s">
+                                                <rect key="frame" x="0.0" y="77.333333333333314" width="217" height="62.333333333333343"/>
+                                                <subviews>
+                                                    <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNE-sa-vBy" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Wnv-lT-kSc"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRw-15-DuA" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="77.333333333333329" y="0.0" width="62.333333333333329" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="p8v-F2-72M"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxG-7j-H8O" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="154.66666666666663" y="0.0" width="62.333333333333343" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Fjr-fP-O2z"/>
+                                                        </connections>
+                                                    </view>
+                                                </subviews>
+                                                <variation key="heightClass=regular-widthClass=regular" spacing="22"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cRs-Ov-ZGM">
+                                                <rect key="frame" x="0.0" y="154.66666666666663" width="217" height="62.333333333333343"/>
+                                                <subviews>
+                                                    <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08V-GG-hzG" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Swv-Mc-ycK"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view tag="8" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUX-zt-0pt" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="77.333333333333329" y="0.0" width="62.333333333333329" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="L7n-lu-Qjl"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VE5-zD-Msp" customClass="SectionView" customModule="Tic_Tac_Toe" customModuleProvider="target">
+                                                        <rect key="frame" x="154.66666666666663" y="0.0" width="62.333333333333343" height="62.333333333333336"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="gvm-xM-Msy"/>
+                                                        </connections>
+                                                    </view>
+                                                </subviews>
+                                                <variation key="heightClass=regular-widthClass=regular" spacing="22"/>
+                                            </stackView>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=regular" spacing="22"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ol5-Q5-vG8" firstAttribute="leading" secondItem="u9I-qC-cak" secondAttribute="leading" id="MWv-Kw-NGJ"/>
+                                    <constraint firstItem="ol5-Q5-vG8" firstAttribute="top" secondItem="u9I-qC-cak" secondAttribute="top" id="W0n-kv-QMc"/>
+                                    <constraint firstAttribute="width" constant="217" id="XLj-nm-gvJ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="311"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="u9I-qC-cak" secondAttribute="height" multiplier="1:1" id="dlG-n4-AjQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ol5-Q5-vG8" secondAttribute="bottom" id="erO-dc-CZv"/>
+                                    <constraint firstAttribute="trailing" secondItem="ol5-Q5-vG8" secondAttribute="trailing" id="jD4-LY-qbJ"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="BNe-It-nx7">
+                                <rect key="frame" x="20" y="64" width="16" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="SWu-N3-v82"/>
+                                    <constraint firstAttribute="width" constant="16" id="f5j-DP-9rf"/>
+                                </constraints>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnJ-dn-oby">
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="0.0078431372549019607" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jnJ-dn-oby" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Ue-OO-x4v"/>
+                            <constraint firstItem="jnJ-dn-oby" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JrY-X5-yQg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jnJ-dn-oby" secondAttribute="bottom" id="Kdp-vk-eSh"/>
+                            <constraint firstItem="u9I-qC-cak" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MUB-2j-5Pw"/>
+                            <constraint firstItem="u9I-qC-cak" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pm4-vs-FqO"/>
+                            <constraint firstItem="BNe-It-nx7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lQ5-XK-Sc9">
+                                <variation key="heightClass=regular-widthClass=regular" constant="75"/>
+                            </constraint>
+                            <constraint firstItem="BNe-It-nx7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="n6K-aq-lAO">
+                                <variation key="heightClass=regular-widthClass=regular" constant="63"/>
+                            </constraint>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jnJ-dn-oby" secondAttribute="trailing" id="paI-ZO-ekn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blockView" destination="jnJ-dn-oby" id="86o-Xf-vqD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.22429906542056" y="83.585313174946009"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="16" height="63"/>
+    </resources>
 </document>
